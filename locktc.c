@@ -87,7 +87,6 @@ int main(int argc, char *argv[])
     {
         fseeko64(fp, -BUF_SIZE, SEEK_CUR);
 
-        printf("pos %zd\n", ftello64(fp));
         if (1 != fread(buf, BUF_SIZE, 1, fp))
         {
             fclose(fp);
@@ -114,7 +113,6 @@ int main(int argc, char *argv[])
         fclose(fout);
     }
 
-    printf("pos %zd\n", ftello64(fp));
     fseeko64(fp, -BUF_SIZE, SEEK_CUR);
 
     if (1 != fwrite(buf, BUF_SIZE, 1, fp))
